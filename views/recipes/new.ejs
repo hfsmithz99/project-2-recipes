@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/recipes" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title">
+    <br>
+    <label>Instructions:</label>
+    <input type="text" name="instructions">
+    <br>
+    <label>Image Link (from imgur):</label>
+    <input type="text" name="imagelink">
+    <br>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+    </select>
+    <input type="submit" value="Add Recipe">
+</form>
+
+<%- include('../partials/footer') %>

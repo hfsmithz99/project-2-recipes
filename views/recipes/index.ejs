@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h1>All Recipes</h1>
+
+<table id="list">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% recipeDocs.forEach(function(r){ %>
+            <tr>
+                <td> <%= r.title %> </td>
+                <td id="image-table-all"><img src="<%= r.imagelink %>"></td>
+                <td><a href="/recipes/<%=r._id%>">Details</a></td>
+            </tr>
+    <% }) %>
+    </tbody>
+</table>
+<%- include('../partials/footer') %>

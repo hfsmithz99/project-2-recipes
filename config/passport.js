@@ -35,7 +35,7 @@ passport.use(new GoogleStrategy({
 
 
 passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
+  cb(null, user._id);
 });
 
 
