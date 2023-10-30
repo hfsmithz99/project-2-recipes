@@ -40,7 +40,7 @@ passport.serializeUser(function(user, cb) {
 
 
 
-passport.deserializeUser(async function(id, cb) {
+passport.deserializeUser(async function(userId, cb) {
 
   // Find your User, using your model, and then call cb(err, whateverYourUserIsCalled)
   // When you call this done function passport assigns the user document to req.user, which will 
