@@ -18,3 +18,76 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+#list td:nth-child(2), #list td:nth-child(3){
+  min-width: 100px;
+}
+
+#list a {
+  border-radius: 4px;
+  background-color: #B8C0C2;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#list a:hover {
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #000000;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #85cb5c;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0 40px 0px 40px;
+}
+nav > a {
+  margin: 15px;
+}
+
+nav > img {
+  width: 150px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #eafffa;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+#imagetable{
+max-width: auto;
+max-height: 5px;
+}
+
+.login {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 34px;
+}
+
