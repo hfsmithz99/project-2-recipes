@@ -6,6 +6,8 @@ module.exports = {
     recommended,
     create,
     show,
+    update,
+    showUpdate
 }
 
 async function index(req, res){
@@ -31,6 +33,19 @@ async function show(req, res){
     }
 }
 
+async function showUpdate(req, res){
+    try{
+        const recipeDocument = await RecipeModel.findById(req.params.id)
+
+        console.log(recipeDocument);
+
+        res.render('recipes/showUpdate', {recipe: recipeDocument})
+    } catch (err){
+        res.send(err);
+    }
+}
+
+
 async function newRecipe(req, res){
     res.render('recipes/new')
 }
@@ -52,4 +67,18 @@ async function create(req, res, next){
         console.log(err);
         res.send(err);
     }
+}
+
+async function update(req, res){
+
+    try{
+        const bodyUpdate = req.body
+        console.log(bodyUpdate, "<+++++++++++++++++++++++++++++++++++++++");
+        const updatedRecipe = await RecipeModel.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedRecipe, "<============== updated recipe")
+        res.redirect(`/recipes`);
+    } catch (err){
+        res.send(err);
+    }
+
 }

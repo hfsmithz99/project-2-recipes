@@ -10,7 +10,8 @@
     <div>Creator Rating:</div>
     <div><%= recipe.rating %> </div>
 </section>
-
+<div>EDIT RECIPE</div>
+<a href="/recipes/<%= recipe._id %>/edit">link</a>
 <!--reviews adding section-->
 
 <% if (user){ %>
@@ -51,7 +52,7 @@
             <td> <%= c.review %> </td>
             <td> <%= c.rating %> </td>
             <td>
-                    <form action="/recipes/<%= c._id %>?_method=DELETE" method="POST">
+                    <form action="/recipes/comments/<%= c._id %>?_method=DELETE" method="POST">
                         <button type="Submit">X</button>
                     </form>
             </td>
