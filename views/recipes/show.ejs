@@ -1,17 +1,13 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div>Title:</div>
-    <div><%=recipe.title%></div>
-    <div>Creator:</div>
-    <div><%= recipe.creator%></div>
-    <div>Instruction:</div>
-    <div><%= recipe.instructions%> </div>
-    <div>Creator Rating:</div>
-    <div><%= recipe.rating %> </div>
+    <div>Title: <%=recipe.title%></div>
+    <div>Creator: <%= recipe.creator%></div>
+    <div>Instruction: <%= recipe.instructions%> </div>
+    <div>Creator Rating: <%= recipe.rating %> </div>
+    <div id="show-image"><img src="<%=  recipe.imagelink%>"></div>
 </section>
-<div>EDIT RECIPE</div>
-<a href="/recipes/<%= recipe._id %>/edit">link</a>
+<a href="/recipes/<%= recipe._id %>/edit">Click here to edit the recipe instructions</a>
 <!--reviews adding section-->
 
 <% if (user){ %>
@@ -53,7 +49,7 @@
             <td> <%= c.rating %> </td>
             <td>
                     <form action="/recipes/<%= c._id %>?_method=DELETE" method="POST">
-                        <button type="Submit">X</button>
+                        <button type="Submit">Delete Review</button>
                     </form>
             </td>
         </tr>

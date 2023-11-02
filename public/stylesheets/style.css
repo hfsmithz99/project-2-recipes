@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Rye&display=swap');
+
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -37,11 +40,12 @@
 
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: 'Courier Prime', monospace;
   color: #000000;
 }
 
 body {
+  font-family: 'Courier Prime', monospace;
   margin: 0;
   height: 100vh;
   display: grid;
@@ -60,6 +64,7 @@ body > nav {
   padding: 0 40px 0px 40px;
 }
 nav > a {
+  font-family: 'Courier Prime', monospace;
   margin: 15px;
 }
 
@@ -91,3 +96,11 @@ max-height: 5px;
   height: 34px;
 }
 
+section {
+  font-family: 'Courier Prime', monospace;
+}
+
+table, th, td {
+  text-align: center;
+  border: 1px solid black;
+}
