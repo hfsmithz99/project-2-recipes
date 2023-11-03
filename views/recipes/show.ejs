@@ -47,11 +47,13 @@
             <td> <%= c.userName %> </td>
             <td> <%= c.review %> </td>
             <td> <%= c.rating %> </td>
+            <% if (user){ %>
             <td>
                     <form action="/recipes/<%= c._id %>?_method=DELETE" method="POST">
                         <button type="Submit">Delete Review</button>
                     </form>
             </td>
+            <% } %>
         </tr>
         <%  }) %>
 
