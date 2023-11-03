@@ -10,6 +10,8 @@ module.exports = {
     showUpdate
 }
 
+
+//function shows the index page
 async function index(req, res){
     console.log(req.user)
     try{
@@ -21,6 +23,7 @@ async function index(req, res){
     }
 }
 
+//functions shows the individual recipes
 async function show(req, res){
     try{
         const recipeDocument = await RecipeModel.findById(req.params.id)
@@ -33,6 +36,7 @@ async function show(req, res){
     }
 }
 
+//functions shows the update recipe page
 async function showUpdate(req, res){
     try{
         const recipeDocument = await RecipeModel.findById(req.params.id)
@@ -45,15 +49,15 @@ async function showUpdate(req, res){
     }
 }
 
-
+//shows the new recipe page
 async function newRecipe(req, res){
     res.render('recipes/new')
 }
-
+//show sthe recommended page
 async function recommended(req, res){
     res.render('recipes/recommended')
 }
-
+//creates a new recipe
 async function create(req, res, next){
     console.log(req.body, '<========= contents of the form')
     console.log(req.user);
@@ -68,7 +72,7 @@ async function create(req, res, next){
         res.send(err);
     }
 }
-
+//updates a recipe
 async function update(req, res){
 
     try{

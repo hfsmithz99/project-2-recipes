@@ -5,6 +5,8 @@ module.exports = {
     deleteComment,
 }
 
+
+//this function allows a user to create a comment
 async function create(req, res){
     try{
         const RecipeDoc = await RecipeModel.findById(req.params.id);
@@ -25,6 +27,8 @@ async function create(req, res){
     }
 }
 
+
+//this function allows the user to delete a comment
 async function deleteComment(req, res){
     console.log(req.user);
 
